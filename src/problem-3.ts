@@ -5,15 +5,20 @@
         const lowerSentence = sentence.toLowerCase();
         const lowerWord = word.toLowerCase();
         const wordsArray = lowerSentence.split(/\b/); 
+        let times=0;
+        for (const element of wordsArray) {
+            if (element.includes(lowerWord)) {
+                times++;
+            }
+        }
 
-        const times= wordsArray.filter(w => w === lowerWord).length;
 
         return times;
     }
 
 
-//    const wordInSen= countWordOccurrences("TypeScript is great. I love TypeScript! But typeScript is hard", "typescript");
-//     console.log(wordInSen)
+   const wordInSen= countWordOccurrences("TypeScript is great. I love TypeScript!", "typescript");
+    console.log(wordInSen)
 
 
 
